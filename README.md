@@ -21,4 +21,4 @@ What is implemented in project?
 Future implementation scope?
 - DONE: For now city name is hardcoded, a search box can be provided so the user can check out the weather of any city in the world.
 - DONE: Implement Unit test cases for the logic code coverage
-- UI test cases to verify functional behavior of the application
+- DONE: UI test cases to verify functional behavior of the application
