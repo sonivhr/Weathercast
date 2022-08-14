@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Weathercast</string>
+    <string name="message_no_connectivity">Please check internet connectivity.</string>
+    <string name="city_not_found">City not found.</string>
+    <string name="degree_celsius">&#176;C</string>
+    <string name="screen_title">%1$s weather forecast</string>
+    <string name="temperature_text">Temperature: %1$s/%2$s&#176;C</string>
+</resources>
