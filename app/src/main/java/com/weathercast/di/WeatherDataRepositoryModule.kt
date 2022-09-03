@@ -1,12 +1,11 @@
 package com.weathercast.di
 
 import com.weathercast.apiinterface.OpenWeatherMapApiInterface
-import com.weathercast.datarespository.WeatherDataRepositoryImpl
-import com.weathercast.datarespository.WeatherDataRepository
+import com.weathercast.forecast.data.repository.WeatherDataRepositoryImpl
+import com.weathercast.forecast.data.repository.WeatherDataRepository
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
-import retrofit2.Retrofit
 
 @Module
 class WeatherDataRepositoryModule {

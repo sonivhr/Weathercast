@@ -1,7 +1,7 @@
 package com.weathercast.di
 
 import android.content.Context
-import com.weathercast.userinterface.WeatherForecastFragment
+import com.weathercast.forecast.presentation.WeatherForecastFragment
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

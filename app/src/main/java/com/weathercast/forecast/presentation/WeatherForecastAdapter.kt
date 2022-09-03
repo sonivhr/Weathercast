@@ -1,4 +1,4 @@
-package com.weathercast.userinterface
+package com.weathercast.forecast.presentation
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.weathercast.R
-import com.weathercast.model.response.Forecast
+import com.weathercast.forecast.data.model.Forecast
 import com.weathercast.util.convertToReadableDateTime
 import com.weathercast.util.loadOriginalImageWithGlide
 

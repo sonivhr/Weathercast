@@ -1,7 +1,7 @@
-package com.weathercast.domain
+package com.weathercast.forecast.domain
 
-import com.weathercast.datarespository.WeatherDataRepository
-import com.weathercast.model.response.WeatherForecastResponse
+import com.weathercast.forecast.data.repository.WeatherDataRepository
+import com.weathercast.forecast.data.model.WeatherForecastResponse
 import com.weathercast.util.ApiCallState
 import javax.inject.Inject
 

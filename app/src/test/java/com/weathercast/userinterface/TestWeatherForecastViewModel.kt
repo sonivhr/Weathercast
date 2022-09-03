@@ -1,7 +1,8 @@
 package com.weathercast.userinterface
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.weathercast.datarespository.WeatherDataRepository
+import com.weathercast.forecast.data.repository.WeatherDataRepository
+import com.weathercast.forecast.presentation.WeatherForecastViewModel
 import com.weathercast.helperclasses.DataLoadingState
 import com.weathercast.mock.MockWeatherForecastModels.Companion.getWeatherForecastResponse
 import com.weathercast.mock.RxJava.Companion.setTrampolineSchedulers

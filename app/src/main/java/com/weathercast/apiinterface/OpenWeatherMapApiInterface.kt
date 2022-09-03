@@ -1,6 +1,6 @@
 package com.weathercast.apiinterface
 
-import com.weathercast.model.response.WeatherForecastResponse
+import com.weathercast.forecast.data.model.WeatherForecastResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

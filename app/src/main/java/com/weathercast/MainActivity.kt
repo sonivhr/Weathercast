@@ -2,7 +2,7 @@ package com.weathercast
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.weathercast.userinterface.WeatherForecastFragment
+import com.weathercast.forecast.presentation.WeatherForecastFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

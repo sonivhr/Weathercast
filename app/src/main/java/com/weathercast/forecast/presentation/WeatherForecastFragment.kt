@@ -1,4 +1,4 @@
-package com.weathercast.userinterface
+package com.weathercast.forecast.presentation
 
 import android.os.Bundle
 import android.view.Menu

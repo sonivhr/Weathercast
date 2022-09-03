@@ -2,7 +2,7 @@ package com.weathercast.util
 
 import com.google.gson.Gson
 import com.weathercast.helperclasses.NoInternetException
-import com.weathercast.model.response.RetrofitErrorResponse
+import com.weathercast.forecast.data.model.RetrofitErrorResponse
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

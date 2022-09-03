@@ -1,6 +1,6 @@
 package com.weathercast.mock
 
-import com.weathercast.model.response.*
+import com.weathercast.forecast.data.model.*
 
 class MockWeatherForecastModels {
     companion object {

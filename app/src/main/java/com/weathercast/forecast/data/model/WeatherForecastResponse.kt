@@ -1,4 +1,4 @@
-package com.weathercast.model.response
+package com.weathercast.forecast.data.model
 
 data class WeatherForecastResponse(
     val cod: String,

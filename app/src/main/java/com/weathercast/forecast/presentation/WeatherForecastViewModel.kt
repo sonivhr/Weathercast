@@ -1,14 +1,10 @@
-package com.weathercast.userinterface
+package com.weathercast.forecast.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.weathercast.datarespository.WeatherDataRepository
-import com.weathercast.domain.CityWeatherForecastUseCase
-import com.weathercast.helperclasses.DataLoadingState
-import com.weathercast.model.response.WeatherForecastResponse
+import com.weathercast.forecast.domain.CityWeatherForecastUseCase
+import com.weathercast.forecast.data.model.WeatherForecastResponse
 import com.weathercast.util.ApiCallState
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
