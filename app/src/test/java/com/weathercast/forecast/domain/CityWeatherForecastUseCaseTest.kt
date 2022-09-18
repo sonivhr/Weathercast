@@ -6,6 +6,7 @@ import com.weathercast.helperclasses.NoInternetException
 import com.weathercast.util.ApiCallState
 import io.mockk.coEvery
 import io.mockk.mockk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -23,11 +24,14 @@ class CityWeatherForecastUseCaseTest {
         cityWeatherForecastUseCase = CityWeatherForecastUseCase(weatherDataRepository)
     }
 
+    @ExperimentalCoroutinesApi
     @Test
     fun `verify invoke when getWeatherForecastByCityName api succeeds`() = runTest {
         coEvery {
             weatherDataRepository.getWeatherForecastByCityName(ofType(String::class))
         } returns ApiCallState.Success(weatherForecastResponse)
+
+        cityWeatherForecastUseCase.invoke(CITY_NAME)
 
         assertEquals(
             ApiCallState.Success(weatherForecastResponse),
@@ -35,6 +39,7 @@ class CityWeatherForecastUseCaseTest {
         )
     }
 
+    @ExperimentalCoroutinesApi
     @Test
     fun `verify invoke when getWeatherForecastByCityName api fails`() = runTest {
         val apiException = Exception("weather forecast api error")
@@ -42,18 +47,23 @@ class CityWeatherForecastUseCaseTest {
             weatherDataRepository.getWeatherForecastByCityName(ofType(String::class))
         } returns ApiCallState.Error(exception = apiException)
 
+        cityWeatherForecastUseCase.invoke(CITY_NAME)
+
         assertEquals(
             ApiCallState.Error(exception = apiException),
             weatherDataRepository.getWeatherForecastByCityName(CITY_NAME)
         )
     }
 
+    @ExperimentalCoroutinesApi
     @Test
     fun `verify invoke when getWeatherForecastByCityName api returns connectivity issue`() = runTest {
         val noConnectivityException = NoInternetException()
         coEvery {
             weatherDataRepository.getWeatherForecastByCityName(ofType(String::class))
         } returns ApiCallState.Error(exception = noConnectivityException)
+
+        cityWeatherForecastUseCase.invoke(CITY_NAME)
 
         assertEquals(
             ApiCallState.Error(exception = noConnectivityException),
