@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.weathercast.forecast.domain.CityWeatherForecastUseCase
 import com.weathercast.forecast.data.model.WeatherForecastResponse
 import com.weathercast.util.ApiCallState
+import com.weathercast.util.DispatcherProvider
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -13,7 +14,8 @@ import javax.inject.Inject
 private const val DEFAULT_CITY_NAME = "London"
 
 class WeatherForecastViewModel @Inject constructor(
-    private val cityWeatherForecastUseCase: CityWeatherForecastUseCase
+    private val cityWeatherForecastUseCase: CityWeatherForecastUseCase,
+    private val dispatcherProviderImp: DispatcherProvider
 ) : ViewModel() {
     private val _cityWeatherForecastState: MutableStateFlow<ApiCallState<WeatherForecastResponse>> =
         MutableStateFlow(ApiCallState.Loading)
@@ -23,7 +25,7 @@ class WeatherForecastViewModel @Inject constructor(
     val cityNameState = _cityNameState.asStateFlow()
 
     fun getWeatherForecast(cityName: String = "London") {
-        viewModelScope.launch {
+        viewModelScope.launch(dispatcherProviderImp.main) {
             _cityNameState.value = cityName
             _cityWeatherForecastState.value = cityWeatherForecastUseCase(cityName = cityName)
         }

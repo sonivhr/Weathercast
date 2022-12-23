@@ -26,6 +26,10 @@ class WeatherForecastFragment : Fragment(R.layout.fragment_weather_forecast),
 
     @Inject
     lateinit var weatherForecastViewModelCreator: Lazy<WeatherForecastViewModel>
+
+    @Inject
+    lateinit var dispatcherProviderImp: DispatcherProvider
+
     private val weatherForecastViewModel: WeatherForecastViewModel by lazy {
         getFragmentViewModel(weatherForecastViewModelCreator)
     }
