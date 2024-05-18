@@ -3,6 +3,8 @@ package com.weathercast.di
 import android.content.Context
 import com.weathercast.BuildConfig
 import com.weathercast.helperclasses.NetworkConnectivityInterceptor
+import com.weathercast.util.DispatcherProvider
+import com.weathercast.util.DispatcherProviderImp
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -45,4 +47,8 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
+
+    @Provides
+    @Reusable
+    fun provideDispatcherProviders(): DispatcherProvider = DispatcherProviderImp()
 }
